@@ -3,11 +3,17 @@ MQTT based Secure Data Exchange Midlleware (SeDEM). A Java Library to perform se
 
 This library provide Java classes to perfrom publish and subscribe MQTT operations by means of the Event class it defines, which provide an Event creation method and implements an event callback listener. It makes easy all the operations against a MQTT Broker Server.
 > This work is part of **TagItSmart!** H2020 European Project,  and in particular is developed in the **TagItSecure!** Open Call.
+
+## Building and installation procedure
+The library is developed as Maven Project then the building procedure consists 
+simply to use the .pom file as usual in a Maven project.
+The result of maven build operation will provide a mavenized JAR including the dependencies, then the application that use the library must import also this jar.
+
 ## Initial Configuration
 
 To permit a dynamic configuration of Logger and Application, the configuration files are external to the application jar. Then it is important using the following VM Arguments while running the main application (either in a .bat / .sh run file or as VM Arguments specified in the IDE).
 
-    _-Drabbitmq_config_file=C:\resources\conf.properties -Dlog4j.configuration=file:C:\resources\log4j.properties_
+    -Drabbitmq_config_file=C:\resources\conf.properties -Dlog4j.configuration=file:C:\resources\log4j.properties
 
 **NOTE:** if the library will be installed on a Linux O.S. it is important to use a Linux well formed path
 
@@ -92,15 +98,15 @@ In the external resource folder of the library (see the "Initial Configuration" 
     log4j.appender.file.layout=org.apache.log4j.PatternLayout
     log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
 **NOTE:** if the library is installed on a Linux O.S. it is important to change the log file path (see the commented line)
+
 ### Library dependencies
 
-The library has 2 main dependencies:
+The library has 2 internal dependencies:
 
 -   log4j, a Java Logging Library
 -   Eclipse Paho library to interact with the MQTT Broker Server
 
-  
-The library will be provided as mavenized JAR including the dependencies, then the application that use the library must import also this jar.
+The other folders present in the repository (ABE-Proxy, CPABE and Device-Entity) represent the other components/libraries involved in the MQTT-SeDEM architecture then it is important setup the entire architecture to permit a right interaction between the MQTT-SeDEM and the other components.
 
 ### An example of use
 
