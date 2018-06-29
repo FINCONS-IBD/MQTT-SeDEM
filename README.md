@@ -111,3 +111,5 @@ The other folders present in the repository (ABE-Proxy, CPABE and Device-Entity)
 ### An example of use
 
 In the  _com.fincons.mqtt.client.test_  package is present a simple example of Publish and Subscribe Scenario including a Simple MQTT Callback class that is invoked when a new MQTT message arrives. Please refer to the classes included in the package above for more details.
+
+**NOTE:** For more details about the library usage please refers to [JavaDoc](https://github.com/FINCONS-IBD/MQTT-SeDEM/tree/master/MQTT-SeDEM/javadoc) folder.
