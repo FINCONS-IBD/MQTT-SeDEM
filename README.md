@@ -2,7 +2,7 @@
 MQTT based Secure Data Exchange Midlleware (SeDEM). A Java Library to perform secure publish/subscribe operations against an MQTT-complaint Broker.
 
 This library provide Java classes to perfrom publish and subscribe MQTT operations by means of the Event class it defines, which provide an Event creation method and implements an event callback listener. It makes easy all the operations against a MQTT Broker Server.
-> This work is part of **TagItSmart!** H2020 European Project,  and in particular is developed in the **TagItSecure!** Open Call.
+> This work is part of **TagItSmart!** H2020 European Project, and in particular is developed in the **TagItSecure!** project funded in the frame of the 2nd TagItSmart! Open Call.
 
 ## Building and installation procedure
 The library is developed as Maven Project then the building procedure consists 
