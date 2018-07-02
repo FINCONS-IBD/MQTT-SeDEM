@@ -17,3 +17,12 @@ The ABE Proxy provides two public endpoint through two different sockets:
 
  - *ABE-Proxy/generate_shared_secret*: performs the agreement of a symmetric key between the data source and the ABE-Proxy using *Elliptic Curve Diffie-Hellman Ephemeral Static*, combined with the *Concat Key-Derivation Function*.
  - *ABE-Proxy/cpabe_information*: the data source delegate the CP-ABE encryption operations to ABE-Proxy.
+ 
+## Software dependencies
+ The ABE-Proxy component has two important dependencies:
+ 
+ - *CPABE library* (see [here](https://github.com/FINCONS-IBD/MQTT-SeDEM/tree/master/CPABE)) that provides the CP-ABE encryption and decryption algorithms and entities. 
+ - *Key Storage Service* component: in which the ABE-Proxy saves the CP-ABE encrypted AES symmetric keys. It is a fully configurable component (specified in the *web.xml* configuration file); in the project the NOSQL OrientDB database has been identified to fulfill these needs.
+
+For more details about the building procedures required to set-up the single components please refer to the single projects descriptions.
+ 

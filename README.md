@@ -1,8 +1,7 @@
 # MQTT-SeDEM
-MQTT based Secure Data Exchange Midlleware (SeDEM). A Java Library to perform secure publish/subscribe operations against an MQTT-complaint Broker.
+MQTT based Secure Data Exchange Midlleware (SeDEM). A Java Library to performs secure publish/subscribe operations against an MQTT-complaint Broker.
 
-This library provide Java classes to perfrom publish and subscribe MQTT operations by means of the Event class it defines, which provide an Event creation method and implements an event callback listener. It makes easy all the operations against a MQTT Broker Server.
-> This work is part of **TagItSmart!** H2020 European Project, and in particular is developed in the **TagItSecure!** project funded in the frame of the 2nd TagItSmart! Open Call.
+This library provides Java classes to perform publish and subscribe MQTT operations by means of the Event class it defines, which provide an Event creation method and implements an event callback listener. It makes easy all the operations against a MQTT Broker Server.
 
 ## Building and installation procedure
 The library is developed as Maven Project then the building procedure consists 
@@ -99,17 +98,28 @@ In the external resource folder of the library (see the "Initial Configuration" 
     log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
 **NOTE:** if the library is installed on a Linux O.S. it is important to change the log file path (see the commented line)
 
-### Library dependencies
+### Software dependencies
 
 The library has 2 internal dependencies:
 
 -   log4j, a Java Logging Library
 -   Eclipse Paho library to interact with the MQTT Broker Server
 
-The other folders present in the repository (ABE-Proxy, CPABE and Device-Entity) represent the other components/libraries involved in the MQTT-SeDEM architecture then it is important setup the entire architecture to permit a right interaction between the MQTT-SeDEM and the other components.
+The other folders present in the repository (ABE-Proxy, CPABE and Device-Entity) represent the other components/libraries involved in the MQTT-SeDEM architecture then it is important setup the entire architecture to permit a right interaction between the MQTT-SeDEM and the others components.
 
 ### An example of use
 
 In the  _com.fincons.mqtt.client.test_  package is present a simple example of Publish and Subscribe Scenario including a Simple MQTT Callback class that is invoked when a new MQTT message arrives. Please refer to the classes included in the package above for more details.
 
 **NOTE:** For more details about the library usage please refers to [JavaDoc](https://github.com/FINCONS-IBD/MQTT-SeDEM/tree/master/MQTT-SeDEM/javadoc) folder.
+
+
+> This work is part of **TagItSmart!** H2020 European Project, and in particular is developed in the **TagItSecure!** project funded in the frame of the 2nd TagItSmart! Open Call.
+>
+> To demonstrate the main functionalities of the MQTT SeDEM, a real use-case was developed  within the TagItSecure project; the demonstrator consists in the following main components:
+>  -  *a data source component* that collects sensor measurements and publishes these event measurements in a secure way using the MQTT-SeDEM encrypting/publishing features. For this reason a MQTT-compliant Broker is required; for this purpose the Evrthyng IoT Platform was used (see [here](https://evrythng.com/) for more details). In the MQTT-SeDEM project (see [here](https://github.com/FINCONS-IBD/MQTT-SeDEM/tree/master/MQTT-SeDEM)), and in particular in the *com.fincons.mqtt.client.test* package is present a simple example of data source Java Publisher.
+>   - *the ABE-Proxy component* (see [here](https://github.com/FINCONS-IBD/MQTT-SeDEM/tree/master/ABE-Proxy)) to perform the heavy CPABE encryption operations. In particular to optimize the encryption operations, the encryption of data is based on AES symmetric keys; the ABE proxy executes the CP-ABE encryption algorithm to protect and save these encrypted symmetric keys. For this purpose, the ABE-Proxy interacts with a *Key Storage Service*. In the project the NOSQL OrientDB database has been identified to fulfill these needs.
+>    - *a data consumer* that performs subscribe operations on the MQTT topic through the MQTT-SeDEM library and decrypts the AES encrypted sensor measurements retrieving the CPABE Encrypted AES key from the *Key Storage Service* instance shared with the ABE-Proxy component described above. 
+>    In the MQTT-SeDEM  project (see [here](https://github.com/FINCONS-IBD/MQTT-SeDEM/tree/master/MQTT-SeDEM)), and in particular in the *com.fincons.mqtt.client.test* package is present a simple example of data consumer (a simple Java Subscriber).
+>    
+>    For more details about the building procedures required to set-up the single components please refer to the single projects descriptions.
