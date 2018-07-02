@@ -1,12 +1,11 @@
 # MQTT-SeDEM
-MQTT based Secure Data Exchange Midlleware (SeDEM). A Java Library to performs secure publish/subscribe operations against an MQTT-complaint Broker.
+MQTT based Secure Data Exchange Midlleware (SeDEM). A Java Library to perform secure publish/subscribe operations against an MQTT-complaint Broker.
 
-This library provides Java classes to perform publish and subscribe MQTT operations by means of the Event class it defines, which provide an Event creation method and implements an event callback listener. It makes easy all the operations against a MQTT Broker Server.
+This library provides Java classes to perform publish and subscribe MQTT operations by means of the Event class it defines, which provides an Event creation method and implements an event callback listener. It makes easy all the operations against the MQTT Broker Server.
 
 ## Building and installation procedure
-The library is developed as Maven Project then the building procedure consists 
-simply to use the .pom file as usual in a Maven project.
-The result of maven build operation will provide a mavenized JAR including the dependencies, then the application that use the library must import also this jar.
+The library is developed as Maven Project then the building procedure simply implies to use the .pom file as usual in a Maven project.
+The result of the maven build operation is a mavenized JAR that includes the dependencies; the application that use the library, then, must import also this jar.
 
 ## Initial Configuration
 
@@ -14,7 +13,7 @@ To permit a dynamic configuration of Logger and Application, the configuration f
 
     -Drabbitmq_config_file=C:\resources\conf.properties -Dlog4j.configuration=file:C:\resources\log4j.properties
 
-**NOTE:** if the library will be installed on a Linux O.S. it is important to use a Linux well formed path
+**NOTE:** if the library has to be installed on a Linux O.S. it is important to use a Linux well formed path
 
 #### Application configuration
 The first step before using the library is the editing of the configuration parameters detailed below. The file named conf.properties is located in the external resource folder of the library (see the "Initial Configuration" introduction section).  Follow an example of configuration file:
@@ -66,11 +65,11 @@ Details about parameters:
 -   _MQTT_RETAINED_  - the flag to specify the persistence of the message. All the messages flagged as retained will be stored by the broker
 -   _MQTT_TIME_TO_WAIT_  - measured in milliseconds, it is the maximum time to wait for an action to complete
 -   _MQTT_TIMEOUT_  - measured in seconds, it defines the maximum time interval the client will wait for the network connection to the MQTT server to be established
--   _MQTT_KEEP_ALIVE_  - measured in seconds, defines the ping interval to keep the connection opened. It is important to know the max keep alive of the server (e.g. 120s on Mosquitto)
+-   _MQTT_KEEP_ALIVE_  - measured in seconds, defines the ping interval to keep the connection alive. It is important to know the max keep alive of the server (e.g. 120s on Mosquitto)
 -   _CPABE_AES_ENCRYPTION_  - flag to enable secure exchange of events
 -   _CPABE_POLICY_  - the personal cpabe policy
 -   _CPABE_ANTICIPATED_KEY_  - flag to enable the calculation of the anticipated key (the next key to be used)
--   _CPABE_ANTICIPATED_KEY_IN_SECONDS_  - the number of second before the key expiration date to start the anticipated key calculation
+-   _CPABE_ANTICIPATED_KEY_IN_SECONDS_  - the number of seconds before the key expiration date to start the anticipated key calculation
 -   _KEY_TYPE, CRYPTOGRAPHIC_CURVE, ALG, ENC_  - details about the key type
 -   _PROXY_PROTOCOL, PROXY_IP, PROXY_PORT, PROXY_ID_  - Abe Proxy endpoint details
 -   _STORAGE_TYPE, DB_IP, DB_PORT, DB_AUTH_USER, DB_AUTH_PWD, DB_DATABASE, DB_TABLE_  - Key Storage endpoint details
@@ -79,7 +78,7 @@ Details about parameters:
 -   _CONSUMER.CPABE_PRIV_KEY_  - the location of cpabe private key
 
 #### Logging configuration
-In the external resource folder of the library (see the "Initial Configuration" introduction section) is present a logging configuration file named _log4j.properties_. It is possible edit this configuration file to change the file size and location and dimension, as well as logging level of the logger. Following an example of the config logging file:
+In the external resource folder of the library (see the "Initial Configuration" introduction section) is present a logging configuration file named _log4j.properties_. It is possible to edit this configuration file to change the file size and location and dimension, as well as logging level of the logger. Here follows an example of the config logging file:
 
     # Root logger option
     log4j.rootLogger=INFO, stdout, file
@@ -105,7 +104,7 @@ The library has 2 internal dependencies:
 -   log4j, a Java Logging Library
 -   Eclipse Paho library to interact with the MQTT Broker Server
 
-The other folders present in the repository (ABE-Proxy, CPABE and Device-Entity) represent the other components/libraries involved in the MQTT-SeDEM architecture then it is important setup the entire architecture to permit a right interaction between the MQTT-SeDEM and the others components.
+The other folders present in the repository (ABE-Proxy, CPABE and Device-Entity) represent the other components/libraries involved in the MQTT-SeDEM architecture then it is important to setup the entire architecture to permit a right interaction between the MQTT-SeDEM and the other components.
 
 ### An example of use
 
