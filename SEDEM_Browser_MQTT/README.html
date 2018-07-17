@@ -1,0 +1,27 @@
+<HEAD>
+<TITLE>Overview</TITLE>
+</HEAD>
+<BODY BGCOLOR="WHITE">
+<CENTER>
+<H1>MQTT SeDEM Browser<br></H1>
+
+<H2>A Java Web Application to demostrate the use of MQTT SeDEM Library<br></H2>
+
+</CENTER>
+The MQTT SeDEM Browser is a web application that, subscribed to the TagITSmart! Stream Processing event topic, uses the SeDEM Libraries (see: https://github.com/FINCONS-IBD/MQTT-SeDEM)and displays each received event both in its encrypted and decrypted forms.
+To this end the SeDEM Browser will use a CP-ABE key in line with the access policy provided by the data publisher.
+
+<H3>Initial Configuration</H3>
+
+The configuration of the SeDEM Browser is provided by the editing of the web.xml file located in the WEB-INF folder. In particular: 
+<ul>
+<li><i>thing_id</i> - the EVRYTHNG thing identifier associated to the MQTT topic to subscribe to for the consumption of this thing</li>
+<li><i>mqtt_conf_dec_subscriber</i> - the full path where the first subscriber configuration file is located. N.B. in this file it is important to set the CPABE_AES_ENCRYPTION to false disabling the decryption process. For the other settings please refer to the SeDEM Library documentation.</li>
+<li><i>mqtt_conf_enc_subscriber</i> - the full path where the second subscriber configuration file is located. N.B. in this file it is important to set the CPABE_AES_ENCRYPTION to true enabling the decryption process. For the other settings please refer to the SeDEM Library documentation.</li>
+<li><i>log4j.properties</i> - the full path where the Logger configuration file is located. For more details please refer to the SeDEM Library documentation.</li>
+<li><i>SocketServerEncrypt</i> - the endpoint URL of the Encrypted Web Socket (e.g. ws://localhost:8080/SEDEM_Browser_MQTT/encryptedMessage) where the encrypted messages will be displayed</li>
+<li><i>SocketServerDecypted</i> - the endpoint URL of the Decrypted Web Socket where the decrypted messages will be displayed</li>
+</ul>
+
+For more details about the configuration procedure of the SeDEM Library please refer to the SeDEM Library documentation (see: https://github.com/FINCONS-IBD/MQTT-SeDEM)
+</BODY>

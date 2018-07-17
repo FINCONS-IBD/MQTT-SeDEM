@@ -1,0 +1,55 @@
+@CHARSET "ISO-8859-1";
+
+/* ######### FOOTER START ######### */
+/* #footer { */
+/* 	position: fixed; */
+/* 	bottom: 0px; */
+/* 	width: 100%; */
+/* 	background-color: white; */
+/* 	border-top: 3px solid #f89928; */
+/* } */
+
+#footer p {
+	display: inline-block;
+	width: 200px;
+	font-size: 9px;
+	margin: 5px 5px 0px 5px;
+}
+
+#euLogo_div{
+	width: 50%;
+	float: left;
+	padding-left: 4%;
+}
+
+#tagITlogo_div{
+	width: 50%;
+	float: left;
+	padding-right: 4%;	
+}
+
+#logo_ue {
+	margin: 5px 5px 0px 0px;
+	width: 60px;
+	display: inline-block;
+	vertical-align: super;
+}
+
+#logo_TagItSmart {
+	float: right;
+	margin: 1%;
+	width: 160px;
+}
+
+#logo_fincons {
+	float: right;
+	margin: 0px 1% 0px 5px;
+	width: 140px;
+}
+
+#logo_tagitsecure {
+	float: left;
+	margin: 5px 0px 0px 0px;
+	width: 50px;
+}
+/* ######### FOOTER END ######### */
